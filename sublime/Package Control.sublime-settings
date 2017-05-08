@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Anaconda",
+		"ASCII Decorator",
+		"GitGutter",
+		"GitSavvy",
+		"GitStatusBar",
+		"Glue",
+		"isort",
+		"Material Theme",
+		"Package Control",
+		"Pretty JSON",
+		"requirementstxt",
+		"RestructuredText Improved",
+		"SFTP",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeXiki",
+		"Themr",
+		"Tomorrow Night Italics Color Scheme"
+	]
+}
