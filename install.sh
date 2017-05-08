@@ -1,4 +1,7 @@
-script_dir=$HOME/dotfiles
+dotfiles=$HOME/dotfiles
 
 # Setup zsh
-sh $script_dir/zsh/install.sh
+sh $dotfiles/zsh/install.sh
+
+# Setup vim
+sh $dotfiles/vim/install.sh

@@ -1,14 +1,26 @@
-# Script directory
-script_dir=$HOME/dotfiles
+# Path to dotfiles
+readonly dotfiles=$HOME/dotfiles
 
 # Path to oh-my-zsh
-OMZ=$HOME/.oh-my-zsh
+readonly omz=$HOME/oh-my-zsh
 
-# Clone oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git $OMZ
+cleanup () {
+    # Remove previous oh-my-zsh
+    rm -rf $omz
+}
 
-# Clone zsh-autosuggestions
-git clone git://github.com/zsh-users/zsh-autosuggestions $OMZ/custom/plugins/zsh-autosuggestions
+set_zsh () {
+    cleanup
 
-# Set zshrc
-ln -s $script_dir/zsh/zshrc $HOME/.zshrc
+    # Clone oh-my-zsh
+    git clone git://github.com/robbyrussell/oh-my-zsh.git $omz
+
+    # Clone zsh-autosuggestions
+    git clone git://github.com/zsh-users/zsh-autosuggestions $omz/custom/plugins/zsh-autosuggestions
+
+    # Setup links
+    ln -sfn $omz $HOME/.oh-my-zsh
+    ln -sfn $dotfiles/zsh/zshrc $HOME/.zshrc
+}
+
+set_zsh
