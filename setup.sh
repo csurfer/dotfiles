@@ -1,7 +1,7 @@
-script_dir=$HOME/dotfiles
+dotfiles=$HOME/dotfiles
 
-# Clone dotfiles repository.
-git clone https://github.com/csurfer/dotfiles.git $script_dir
+# Clone dotfiles
+git clone https://github.com/csurfer/dotfiles.git $dotfiles
 
-# Install environments.
-sh $script_dir/install.sh
+# Install environments
+sh $dotfiles/install.sh
