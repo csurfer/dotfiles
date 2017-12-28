@@ -1,4 +1,4 @@
-dotfiles=$HOME/dotfiles
+readonly dotfiles=$HOME/dotfiles
 
 # Clone dotfiles
 git clone https://github.com/csurfer/dotfiles.git $dotfiles
