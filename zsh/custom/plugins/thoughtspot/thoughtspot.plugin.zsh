@@ -20,7 +20,7 @@ export MAVEN_HOME=/usr/local/scaligent/toolchain/apache-maven/apache-maven-3.0.4
 export MAVEN_OPTS="-Xms1024m -Xmx4096m -XX:PermSize=1024m"
 
 # Path
-export PATH=$GIT_ROOT:$CLASSPATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/lib/:/Users/vishwas.sharma/Library/:/usr/local/opt/protobuf@2.5/bin
+export PATH=$GIT_ROOT:$CLASSPATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/lib/:$HOME/Library/:/usr/local/opt/protobuf@2.5/bin
 
 # nvm setup
 export NVM_DIR="$HOME/.nvm"
