@@ -12,11 +12,14 @@ cleanup () {
 setup () {
     cleanup
 
-    # Copy tmux configuration
-    cp $tmux/tmux.conf ~/.tmux.conf
+    # Clone oh-my-tmux
+    git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
     
-    # Installation
-    tmux source ~/.tmux.conf
+    # Link the configuration
+    ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
+
+    # Copy the customization changes
+    cp $HOME/.tmux/.tmux.conf.local $HOME
 }
 
 setup
