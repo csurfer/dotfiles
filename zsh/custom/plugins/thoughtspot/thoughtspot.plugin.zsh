@@ -82,7 +82,6 @@ function rebootCallosum () {
   pushd
   cd ~/thoughtspot
   mvn package -DskipTests=true --offline -T 1C
-  pushCallosum
   popd
 }
 
@@ -137,4 +136,24 @@ function checkStyle () {
     java -Dsamedir=$_styleDir -cp $_cp $_main -c $_cfg $java_files
   fi
   popd
+}
+
+function pushWar () {
+  scp ~/thoughtspot/callosum/server/target/callosum-server-1.0-SNAPSHOT.war "$1"@"$2":~/thoughtspot/callosum/server/target/
+}
+
+function pushWarK8s () {
+  scp ~/thoughtspot/callosum/server/target/callosum-server-1.0-SNAPSHOT.war "$1"@"$2":/usr/local/scaligent/release/callosum/server/target/ 
+}
+
+function mac2ws () {
+  git diff --name-only | xargs -I{} -n 1 scp {} vishwas.sharma@10.77.144.99:~/thoughtspot/{}
+}
+
+function ws2mac () {
+  ssh devbox 'cd ~/thoughtspot && git diff --name-only' | xargs -I{} -n 1 scp vishwas.sharma@10.77.144.99:~/thoughtspot/{} {}
+}
+
+function logit () {
+  curl $1 > log.log
 }
