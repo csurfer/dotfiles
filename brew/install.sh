@@ -45,6 +45,15 @@ setup () {
     # Install fuzzy search
     install_or_upgrade "fzf"
     $(brew --prefix)/opt/fzf/install
+
+    # Install download utilities
+    brew install youtube-dl
+    brew install wget
+    brew install httpie
+
+    # Install shell stuff
+    brew install nnn
+    brew install googler
 }
 
 setup
