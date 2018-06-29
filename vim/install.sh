@@ -16,8 +16,8 @@ setup () {
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
     # Copy vimrc
-    cp $vim/vimrc ~/.vimrc 
-    
+    cp $vim/vimrc ~/.vimrc
+
     # Plugin installation
     vim +PluginInstall +qall
 }
