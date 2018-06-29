@@ -6,7 +6,7 @@ readonly tmux=$dotfiles/tmux
 
 cleanup () {
     # Remove previous tmux
-    rm -rf ~/.tmux ~/.tmux.conf
+    rm -rf ~/.tmux ~/.tmux.conf ~/.tmux.conf.local
 }
 
 setup () {
@@ -19,7 +19,7 @@ setup () {
     ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
 
     # Copy the customization changes
-    cp $HOME/.tmux/.tmux.conf.local $HOME
+    cp $tmux/.tmux.conf.local $HOME
 }
 
 setup
