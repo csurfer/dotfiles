@@ -14,3 +14,6 @@ sh $dotfiles/tmux/install.sh
 
 # Sublime restore instructions
 sh $dotfiles/sublime/install.sh
+
+# iterm2 font setup
+sh $dotfiles/iterm2/install.sh
