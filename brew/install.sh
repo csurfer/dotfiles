@@ -19,10 +19,21 @@ homebrew () {
 install_or_upgrade () {
     if brew ls --versions $1 > /dev/null; then
         # The package is installed
-	brew upgrade $1
+	    brew upgrade $1
     else
         # The package is not installed
-	brew install $1
+	    brew install $1
+    fi
+}
+
+# Install or Upgrade brew formula
+cask_install_or_upgrade () {
+    if brew cask ls --versions $1 > /dev/null; then
+        # The package is installed
+	    brew cask upgrade $1
+    else
+        # The package is not installed
+	    brew cask install $1
     fi
 }
 
@@ -41,6 +52,9 @@ setup () {
 
     # Install htop
     install_or_upgrade "htop"
+
+    # Install iterm2
+    cask_install_or_upgrade "iterm2"
 
     # Install fuzzy search
     install_or_upgrade "fzf"
