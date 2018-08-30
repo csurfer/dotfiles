@@ -66,6 +66,7 @@ setup () {
     brew install httpie
 
     # Install shell stuff
+    brew install bat
     brew install nnn
     brew install googler
 }
