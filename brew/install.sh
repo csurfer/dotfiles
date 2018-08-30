@@ -69,6 +69,7 @@ setup () {
     brew install bat
     brew install nnn
     brew install googler
+    brew install fd
 }
 
 setup
