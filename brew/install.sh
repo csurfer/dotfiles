@@ -70,6 +70,9 @@ setup () {
     brew install nnn
     brew install googler
     brew install fd
+
+    # Install cmake
+    brew install cmake
 }
 
 setup

@@ -20,6 +20,9 @@ setup () {
 
     # Plugin installation
     vim +PluginInstall +qall
+
+    # YCM installation completion
+    ~/.vim/bundle/YouCompleteMe/install.py
 }
 
 setup
