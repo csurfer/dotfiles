@@ -40,3 +40,8 @@ function javagrep () {
 function jsgrep () {
     filegrep "js" $1
 }
+
+# Cheatsheet
+function cheat() {
+    curl http://cheat.sh/$1
+}
