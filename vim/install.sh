@@ -15,6 +15,10 @@ setup () {
     # Clone vundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+    # Install colorscheme
+    mkdir ~/.vim/colors
+    cp $vim/smyck.vim ~/.vim/colors
+
     # Copy vimrc
     cp $vim/vimrc ~/.vimrc
 

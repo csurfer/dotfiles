@@ -74,3 +74,6 @@ set backspace=indent,eol,start
 
 " Shiftwidth and tabstop
 set tabstop=4 shiftwidth=4 expandtab
+
+" Colorscheme
+colorscheme smyck
