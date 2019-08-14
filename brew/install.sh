@@ -10,9 +10,9 @@ homebrew () {
     if [[ $? != 0 ]]; then
         # Install Homebrew
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    else
-        brew update
     fi
+    brew update
+    brew tap caskroom/cask
 }
 
 # Install or Upgrade brew formula
@@ -56,23 +56,26 @@ setup () {
     # Install iterm2
     cask_install_or_upgrade "iterm2"
 
+    # Install VisualStudioCode
+    cask_install_or_upgrade "visual-studio-code"
+
     # Install fuzzy search
     install_or_upgrade "fzf"
     $(brew --prefix)/opt/fzf/install
 
     # Install download utilities
-    brew install youtube-dl
-    brew install wget
-    brew install httpie
+    install_or_upgrade "youtube-dl"
+    install_or_upgrade "wget"
+    install_or_upgrade "httpie"
 
     # Install shell stuff
-    brew install bat
-    brew install nnn
-    brew install googler
-    brew install fd
+    install_or_upgrade "bat"
+    install_or_upgrade "nnn"
+    install_or_upgrade "googler"
+    install_or_upgrade "fd"
 
     # Install cmake
-    brew install cmake
+    install_or_upgrade "cmake"
 }
 
 setup
