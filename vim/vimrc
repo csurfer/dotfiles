@@ -77,3 +77,6 @@ set tabstop=4 shiftwidth=4 expandtab
 
 " Colorscheme
 colorscheme smyck
+
+" Syntax on
+syntax on
