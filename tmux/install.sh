@@ -14,7 +14,7 @@ setup () {
 
     # Clone oh-my-tmux
     git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
-    
+
     # Link the configuration
     ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
 
