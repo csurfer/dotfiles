@@ -12,8 +12,8 @@ sh $dotfiles/zsh/install.sh
 # Setup tmux
 sh $dotfiles/tmux/install.sh
 
-# Sublime restore instructions
-sh $dotfiles/sublime/install.sh
+# VSCode installation
+sh $dotfiles/vscode/install.sh
 
 # iterm2 font setup
 sh $dotfiles/iterm2/install.sh
