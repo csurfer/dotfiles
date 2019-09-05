@@ -80,3 +80,6 @@ colorscheme smyck
 
 " Syntax on
 syntax on
+
+" Set cursor line
+set cursorline
