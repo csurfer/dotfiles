@@ -45,3 +45,13 @@ function jsgrep () {
 function cheat() {
     curl http://cheat.sh/$1
 }
+
+# Better cp
+function cp() {
+    rsync -ah --progress $1 $2
+}
+
+# Better scp
+function scp() {
+    rsync -ah --progress $1 $2
+}
