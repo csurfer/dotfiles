@@ -1,8 +1,8 @@
 # Path to dotfiles
 readonly dotfiles=$HOME/dotfiles
 
-# Path to iterm folder
-readonly iterm=$dotfiles/iterm
+# Path to term folder
+readonly term=$dotfiles/term
 
 # Path to font folder for user
 readonly fonts=~/Library/Fonts
