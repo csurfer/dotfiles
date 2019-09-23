@@ -76,6 +76,9 @@ setup () {
 
     # Install cmake
     install_or_upgrade "cmake"
+
+    # Install tldr
+    install_or_upgrade "tldr"
 }
 
 setup
