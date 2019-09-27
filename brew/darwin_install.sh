@@ -73,6 +73,7 @@ setup () {
     install_or_upgrade "nnn"
     install_or_upgrade "googler"
     install_or_upgrade "fd"
+    install_or_upgrade "hyperfine"
 
     # Install cmake
     install_or_upgrade "cmake"
