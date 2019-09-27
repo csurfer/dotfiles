@@ -74,6 +74,7 @@ setup () {
     install_or_upgrade "googler"
     install_or_upgrade "fd"
     install_or_upgrade "hyperfine"
+    install_or_upgrade "the_silver_searcher"
 
     # Install cmake
     install_or_upgrade "cmake"
