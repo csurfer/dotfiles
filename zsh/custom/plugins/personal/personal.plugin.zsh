@@ -55,3 +55,18 @@ function cp() {
 function scp() {
     rsync -ah --progress $1 $2
 }
+
+# Git branch delete interactive.
+function gbdint() {
+    for f in `git branch`
+    do
+        read "choice?>>> Should I delete $fg[blue]$f$reset_color branch (Y|y|N|n)? "
+        if [[ $choice =~ ^(Y|y)$ ]]
+        then
+            echo ">>>" $fg[red]"Deleting $f" $reset_color
+            git branch -D $f
+        else
+            echo ">>>" $fg[green]"Not deleting $f" $reset_color
+        fi
+    done
+}
