@@ -12,7 +12,6 @@ homebrew () {
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
-    brew tap caskroom/cask
 }
 
 # Install or Upgrade brew formula
