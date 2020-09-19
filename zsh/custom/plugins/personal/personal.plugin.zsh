@@ -70,3 +70,8 @@ function gbdint() {
         fi
     done
 }
+
+# Open current folder in vscode.
+function vscode() {
+	code -n --folder-uri `pwd`
+}
