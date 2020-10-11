@@ -1,3 +1,6 @@
+# OS
+readonly os=`uname | tr '[:upper:]' '[:lower:]'`
+
 # Path to dotfiles
 readonly dotfiles=$HOME/dotfiles
 
@@ -12,8 +15,18 @@ cleanup () {
     rm -rf ~/.oh-my-zsh ~/.zshrc
 }
 
+install () {
+    # Install needed softwares
+    if [ $os = 'linux' ]; then
+        sudo apt install zsh
+    else
+        brew install zsh
+    fi
+}
+
 setup () {
     cleanup
+    install
 
     # Clone oh-my-zsh
     git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git $omz
