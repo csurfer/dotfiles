@@ -73,5 +73,5 @@ function gbdint() {
 
 # Open current folder in vscode.
 function vscode() {
-	code -n --folder-uri `pwd`
+    code -n --folder-uri `pwd`
 }
