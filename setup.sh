@@ -1,3 +1,4 @@
+# Path to dotfiles
 readonly dotfiles=$HOME/dotfiles
 
 # Clone dotfiles

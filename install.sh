@@ -1,10 +1,11 @@
+# Path to dotfiles
 readonly dotfiles=$HOME/dotfiles
-
-# Operating System on which to install
-os=`uname | tr '[:upper:]' '[:lower:]'`
+# Load utility file
+[ -f $dotfiles/util.sh ] && . $dotfiles/util.sh
+entering_msg
 
 # Setup brew installables
-sh $dotfiles/brew/${os}_install.sh
+sh $dotfiles/brew/install.sh
 
 # Setup vim
 sh $dotfiles/vim/install.sh
@@ -18,5 +19,8 @@ sh $dotfiles/tmux/install.sh
 # VSCode installation
 sh $dotfiles/vscode/install.sh
 
-# term font setup
-sh $dotfiles/term/${os}_install.sh
+# Font setup
+sh $dotfiles/fonts/install.sh
+
+# Post brew install.
+sh $dotfiles/brew/post_install.sh
