@@ -18,12 +18,6 @@ alias gpr='git pull --rebase'
 # Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Python tests
-function pytest () {
-    python setup.py test -q
-    python3 setup.py test -q
-}
-
 # Grep specific files
 function filegrep () {
     grep "$2" --include="*.$1" -IR .
