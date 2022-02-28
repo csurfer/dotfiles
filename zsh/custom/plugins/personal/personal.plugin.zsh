@@ -36,22 +36,12 @@ function jsgrep () {
 }
 
 # Cheatsheet
-function cheat() {
+function cheat () {
     curl http://cheat.sh/$1
 }
 
-# Better cp
-function cp() {
-    rsync -ah --progress $1 $2
-}
-
-# Better scp
-function scp() {
-    rsync -ah --progress $1 $2
-}
-
 # Git branch delete interactive.
-function gbdint() {
+function gbdint () {
     for f in `git branch`
     do
         read "choice?>>> Should I delete $fg[blue]$f$reset_color branch (Y|y|N|n)? "
@@ -66,6 +56,38 @@ function gbdint() {
 }
 
 # Open current folder in vscode.
-function vscode() {
+function vscode () {
     code -n --folder-uri `pwd`
+}
+
+# Clean branch
+function cb () {
+    BRANCH=`git branch --show-current`
+    if [[ $BRANCH = 'master' ]]
+    then
+        echo ">>>" $fg[green]"Not deleting "$BRANCH $reset_color
+    else
+        echo ">>>" $fg[red]"Deleting "$BRANCH" and switching to master" $reset_color
+        git checkout master && git branch -D $BRANCH
+    fi
+    git pull
+}
+
+# Rebase current branch on latest master.
+function rebase () {
+    BRANCH=`git branch --show-current`
+    if [[ $BRANCH = 'master' ]]
+    then
+        echo '>>>' $fg[green]'On master. Rebasing' $reset_color
+        git pull
+    else
+        echo '>>>' $fg[green]'On '$BRANCH' switching to master' $reset_color
+        git checkout master
+        echo '>>>' $fg[green]'Rebasing master' $reset_color
+        git pull
+        echo '>>>' $fg[green]'Switching back to '$BRANCH $reset_color
+        git checkout $BRANCH
+        echo '>>>' $fg[green]'On '$BRANCH'. Rebasing' $reset_color
+        git rebase -i master
+    fi
 }
