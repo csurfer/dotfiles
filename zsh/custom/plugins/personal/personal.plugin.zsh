@@ -78,16 +78,16 @@ function rebase () {
     BRANCH=`git branch --show-current`
     if [[ $BRANCH = 'master' ]]
     then
-        echo '>>> On master. Rebasing'
+        echo '>>>' $fg[green]'On master. Rebasing' $reset_color
         git pull
     else
-        echo '>>> On '$BRANCH' switching to master'
+        echo '>>>' $fg[green]'On '$BRANCH' switching to master' $reset_color
         git checkout master
-        echo '>>> Rebasing master'
+        echo '>>>' $fg[green]'Rebasing master' $reset_color
         git pull
-        echo '>>> Switching back to '$BRANCH
+        echo '>>>' $fg[green]'Switching back to '$BRANCH $reset_color
         git checkout $BRANCH
-        echo '>>> On '$BRANCH'. Rebasing'
+        echo '>>>' $fg[green]'On '$BRANCH'. Rebasing' $reset_color
         git rebase -i master
     fi
 }
