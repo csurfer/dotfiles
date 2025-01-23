@@ -1,0 +1,92 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": false,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "folder"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {},
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [
+    {
+      "id": "KcGTf",
+      "name": "Zettelkasten",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "tree",
+          "operator": "is",
+          "value": "Zettelkasten/"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-lightbulb",
+      "color": "yellow"
+    },
+    {
+      "id": "n4KJ7",
+      "name": "Templates",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "tree",
+          "operator": "is",
+          "value": "Templates/"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-layout-template",
+      "color": "blue"
+    },
+    {
+      "id": "tRJoX",
+      "name": "References",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "tree",
+          "operator": "is",
+          "value": "References/"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-book-open-text",
+      "color": "green"
+    }
+  ],
+  "folderRules": [
+    {
+      "id": "nFlnu",
+      "name": "Folders",
+      "match": "any",
+      "conditions": [
+        {
+          "source": "tree",
+          "operator": "is"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-folder",
+      "color": "orange"
+    }
+  ]
+}
