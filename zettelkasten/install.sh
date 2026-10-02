@@ -8,7 +8,7 @@ entering_msg
 readonly zettelkasten=$dotfiles/zettelkasten
 
 cleanup () {
-    # Remove previous tmux
+    # Remove previous configuration JSONs
     red_msg "Cleaning up configuration JSONs"
     rm ./*.json
 }

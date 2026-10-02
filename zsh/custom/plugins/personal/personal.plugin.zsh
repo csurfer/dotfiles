@@ -1,14 +1,7 @@
 # Export
 export PATH=$PATH:/usr/local/lib/:$HOME/Library/
-export PATH=$PATH:/usr/local/Cellar/python@2
-export PATH=$PATH:/usr/local/Cellar/python
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/Users/vishwassharma/Library/Python/3.9/bin
+export PATH=$PATH:$(brew --prefix python3)/bin
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/:$HOME/Library/
-
-# Force tmux to use 256 colours.
-alias tmux="tmux -2"
-alias tma="tmux -2 attach-session -t"
 
 # Git aliases.
 alias gb='git branch --list $@'

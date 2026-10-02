@@ -13,14 +13,11 @@ sh $dotfiles/vim/install.sh
 # Setup zsh
 sh $dotfiles/zsh/install.sh
 
-# Setup tmux
-sh $dotfiles/tmux/install.sh
+# Setup wezterm
+sh $dotfiles/wezterm/install.sh
 
-# VSCode installation
-sh $dotfiles/vscode/install.sh
-
-# Font setup
-sh $dotfiles/fonts/install.sh
+# Setup herdr
+sh $dotfiles/herdr/install.sh
 
 # Post brew install.
 sh $dotfiles/brew/post_install.sh
