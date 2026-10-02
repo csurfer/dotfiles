@@ -56,37 +56,21 @@ main () {
     # Install zsh
     install_or_upgrade "zsh"
 
-    # Install tmux
-    install_or_upgrade "tmux"
-
     # Install htop
     install_or_upgrade "htop"
 
-    # Install iterm2
+    # Install wezterm
     if [[ $os == "darwin" ]]; then
-        cask_install_or_upgrade "iterm2"
+        cask_install_or_upgrade "wezterm"
+    else
+        red_msg "Unable to install wezterm"
     fi
 
     # Install VisualStudioCode
     cask_install_or_upgrade "visual-studio-code"
 
-    # Install download utilities
-    install_or_upgrade "wget"
-    install_or_upgrade "httpie"
-
-    # Install shell stuff
-    install_or_upgrade "bat"
-    install_or_upgrade "nnn"
-    install_or_upgrade "googler"
-    install_or_upgrade "fd"
-    install_or_upgrade "hyperfine"
-    install_or_upgrade "the_silver_searcher"
-
-    # Install cmake
-    install_or_upgrade "cmake"
-
-    # Install tldr
-    install_or_upgrade "tldr"
+    # Install nerd fonts
+    cask_install_or_upgrade "font-hack-nerd-font"
 }
 
 main

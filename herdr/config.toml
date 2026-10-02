@@ -1,0 +1,15 @@
+onboarding = false
+
+[ui.sound]
+enabled = false
+
+[theme]
+name = "dracula"
+auto_switch = false
+
+[ui]
+agent_panel_sort = "spaces"
+
+[terminal]
+default_shell = "zsh"
+shell_mode = "auto"
