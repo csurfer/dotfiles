@@ -19,5 +19,8 @@ sh $dotfiles/wezterm/install.sh
 # Setup herdr
 sh $dotfiles/herdr/install.sh
 
+# Setup ai folders
+sh $dotfiles/ai/install.sh
+
 # Post brew install.
 sh $dotfiles/brew/post_install.sh
