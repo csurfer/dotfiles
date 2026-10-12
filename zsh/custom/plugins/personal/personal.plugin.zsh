@@ -143,3 +143,97 @@ function git_recursive_gc () {
         fi
     done;
 }
+
+# Worktree management
+worktree_base=~/src/.worktrees
+function _wt_main_worktree () {
+    git worktree list | head -1 | awk '{print $1}'
+}
+
+function wta () {
+    if [[ -z $1 ]]
+    then
+        echo "Usage: wta <branch-name>"
+        return 1
+    fi
+    if [[ $1 == -* ]]
+    then
+        echo "Branch name cannot start with '-'"
+        return 1
+    fi
+    mkdir -p $worktree_base
+    REPO_NAME=$(basename "$(_wt_main_worktree)")
+    git worktree add -b "$1" "$worktree_base/$REPO_NAME-$1" "origin/$(default_branch)"
+}
+
+function wtr () {
+    if [[ -z $1 ]]
+    then
+        echo "Usage: wtr <branch-name>"
+        return 1
+    fi
+    local main_worktree=$(_wt_main_worktree)
+    REPO_NAME=$(basename "$main_worktree")
+    local target=$worktree_base/$REPO_NAME-$1
+    if [[ $PWD == $target || $PWD == $target/* ]]
+    then
+        cd $main_worktree
+    fi
+    if git worktree remove $target
+    then
+        read "choice?>>> Should I delete $fg[blue]$1$reset_color branch (Y|y|N|n)? "
+        if [[ $choice =~ ^(Y|y)$ ]]
+        then
+            echo ">>>" $fg[red]"Deleting $1" $reset_color
+            git branch -D -- "$1"
+        else
+            echo ">>>" $fg[green]"Not deleting $1" $reset_color
+        fi
+    fi
+}
+
+function wtcd () {
+    if [[ -z $1 ]]
+    then
+        echo "Usage: wtcd <branch-name>"
+        return 1
+    fi
+    REPO_NAME=$(basename "$(_wt_main_worktree)")
+    cd $worktree_base/$REPO_NAME-$1
+}
+
+function thinclaude () {
+    claude --strict-mcp-config --mcp-config '{"mcpServers": {}}' --dangerously-skip-permissions
+}
+
+# Symlink all skills from ~/agents-common/skills into ~/.claude/skills and ~/.codex/skills.
+function linkskills () {
+    SRCS=(~/agents-common/skills)
+    DESTS=(~/.claude/skills ~/.codex/skills)
+    for SRC in $SRCS;
+    do
+        for DEST in $DESTS;
+        do
+            mkdir -p $DEST
+            for dir in $SRC/*;
+            do
+                if [[ ! -d $dir ]]
+                then
+                    continue
+                fi
+                name=${dir:t}
+                target=$DEST/$name
+                if [[ -L $target && $(readlink $target) == $dir ]]
+                then
+                    echo '>>>' $fg[green]'Already linked '$name' in '$DEST $reset_color
+                elif [[ -e $target || -L $target ]]
+                then
+                    echo '>>>' $fg[red]'Skipping '$name': '$target' exists and is not the expected symlink' $reset_color
+                else
+                    ln -s $dir $target
+                    echo '>>>' $fg[blue]'Linked '$name' in '$DEST $reset_color
+                fi
+            done
+        done
+    done
+}
