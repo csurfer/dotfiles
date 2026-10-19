@@ -22,5 +22,8 @@ sh $dotfiles/herdr/install.sh
 # Setup ai folders
 sh $dotfiles/ai/install.sh
 
+# Setup obsidian vault
+sh $dotfiles/obsidian/install.sh
+
 # Post brew install.
 sh $dotfiles/brew/post_install.sh
